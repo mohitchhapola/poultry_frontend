@@ -51,6 +51,7 @@ export const logoutUser = async() => {
  try{
  await axios.get(`${BACKEND_URL}/api/users/logout` );
  localStorage.removeItem('username');
+  localStorage.removeItem('token');
 }
  catch(error){
     const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
